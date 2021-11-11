@@ -5,9 +5,17 @@ mybot.on("ready", () => {
   console.log(`${mybot.user.username} is ready!`);
 });
 
+var reply = [
+  "Hello.",
+  "Hi",
+  "I am alive",
+  "heyoo",
+  "Hello man!"
+];
+
 mybot.on("messageCreate", (m) => {
   if (m.content == "ping") {
-    m.reply("Pong");
+    m.reply(`${reply[Math.floor(Math.random() * reply.length)]}`);
   };
 });
 
